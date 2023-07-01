@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "build-css": "npx tailwindcss -i ./src/input.css -o ./public/style.css --watch",
-    "dev": "webpack serve --open"
+    "dev": "concurrently \"webpack serve --open\" \"npm run build-css\" "
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
     "babel-loader": "^9.1.2",
+    "concurrently": "^8.2.0",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
